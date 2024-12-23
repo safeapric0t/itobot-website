@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Takım Üyeleri Kartları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                padding: 10px;
+                /* Kartların etrafında biraz boşluk bırak */
+            }
+
+            .row {
+                flex-direction: column;
+                /* Kartları dikey olarak yerleştir */
+                align-items: center;
+                /* Kartları ortala */
+            }
+
+            .card {
+                width: 90%;
+                /* Kart genişliğini %90 yap */
+                margin-bottom: 20px;
+                /* Kartlar arasına boşluk ekle */
+            }
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            /* Kartları ortalamak için */
+        }
+
+        .card-front h2 {
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* Kartlar arasındaki boşluk */
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .card-front {
+            flex-direction: column;
+        }
+
+        .photo {
+            width: 100%;
+            height: 150px;
+            background-color: #e0e0e0;
+            /* Placeholder for photo */
+            margin-bottom: 10px;
+            background-size: cover;
+            /* Resmi kapsayacak şekilde ayarlayın */
+            background-position: center;
+            /* Resmin ortalanmasını sağlar */
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title{
+            display: flex;
+            align-items: center;
+            width: 500px;
+            margin-top: 40px;
+            justify-content: flex-start;
+        }
+        .anasayfabuton{
+            padding: 10px 10px;
+            background-color: black;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #bbbdc8;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="title">
+            <a href="index.html" class="anasayfabuton">Anasayfa</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h1>Takım Üyelerimiz</h1>
+        </div>
+        
+
+        <!-- 1. Satır: 2 kart -->
+         <h2>Mentörlerimiz</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image1.jpg');"></div>
+                        <h2>Metin Kaya</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image2.jpg');"></div>
+                        <h2>MehmetCan Karahan</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2. Satır: 1 kart -->
+         <h2>Takım Kaptanı</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/hamzafoto.JPG');"></div>
+                        <h2>Hamza Nuriddinov</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3. Satır: 1 kart -->
+         <h2>Yazılım</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/DSC_0160.JPG');"></div>
+                        <h2>Yahya Burak</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 4. Satır: 4 kart -->
+         <h2>Mekanik Ekibi</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/samedfoto.JPG');"></div>
+                        <h2>Samed Mert</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/efefoto.JPG');"></div>
+                        <h2>Efe Üçel</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/burakfoto.JPG');"></div>
+                        <h2>Burakcan Yılmaz</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/akınfoto.JPG');"></div>
+                        <h2>Akın Ardıç</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image8.jpg');"></div>
+                        <h2>Kayra Bozoğlan</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>Tasarım Ekibi</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/koksalfoto.JPG');"></div>
+                        <h2>Köksal Berkay Güler</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image2.jpg');"></div>
+                        <h2>Hamza Özkaynar</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 5. Satır: 5 kart -->
+        <h2>Pr Ekibi</h2>
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('images/DSC_0284.JPG');"></div>
+                        <h2>Mina Tuana Deregözü</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image10.jpg');"></div>
+                        <h2>Diğer prcı</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image11.jpg');"></div>
+                        <h2>Yahya Burak</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image12.jpg');"></div>
+                        <h2>Yahya Burak</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image13.jpg');"></div>
+                        <h2>Diğer prcı</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem 30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 6. Satır: 4 kart -->
+        <div class="row">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image14.jpg');"></div>
+                        <h2>Diğer prcı</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image15.jpg');"></div>
+                        <h2>Diğer prcı</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image16.jpg');"></div>
+                        <h2>Diğer prcı</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo" style="background-image: url('image17.jpg');"></div>
+                        <h2>Yahya Burak</h2>
+                    </div>
+                    <div class="card-back">
+                        <h2>Yahya Burak</h2>
+                        <p>Lorem30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
